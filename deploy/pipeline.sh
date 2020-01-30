@@ -97,7 +97,7 @@ OUTPUT_CFN_TEMPLATE_FILE=${CFN_TEMPLATE_FILE}.tmp
 
 # Set some cfn stack parameter overrides here
 GIT_BRANCH='master'
-GIT_USER='stevelitras'
+GIT_USER='autodesk-lxp'
 GIT_REPO='confluence-to-degreed'
 
 echo "GitBranch: $GIT_BRANCH"
