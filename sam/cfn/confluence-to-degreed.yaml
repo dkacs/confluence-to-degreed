@@ -289,7 +289,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Description: Run the step function daily
-      ScheduleExpression: "cron(30 21 * * ? *)"
+      ScheduleExpression: "cron(0 20 * ? *)"
       State: ENABLED
       RoleArn: !GetAtt StatesExecutionRole.Arn
       Targets:
