@@ -276,12 +276,20 @@ Resources:
                 Action:
                   - "lambda:InvokeFunction"
                 Resource: "*"
+        - PolicyName: StepExecutionPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              Effect: Allow
+              Action:
+                - "states:StartExecution"
+              Resource: "*"
 
   confluenceToDegreedSchedule:
     Type: AWS::Events::Rule
     Properties:
       Description: Run the step function daily
-      ScheduleExpression: "cron(0 18 * * ? *)"
+      ScheduleExpression: "cron(30 21 * * ? *)"
       State: ENABLED
       RoleArn: !GetAtt StatesExecutionRole.Arn
       Targets:
