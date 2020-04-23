@@ -54,7 +54,7 @@ def lambda_handler(event, context):
                 \"confluencetodegreed\".wiki_spaces.contentid as ContentId, 
                 \"confluencetodegreed\".wiki_spaces.url as URL, 'N' as \"Delete\", 
                 \"confluencetodegreed\".wiki_spaces.title as Title, '' as Summary, 
-                'https://dpe-support.autodesk.com/images/adsk-wiki-logo.png' as ImageURL, '' as Duration, '' as Language, '' as Provider, 
+                'https://dpe-support.autodesk.com/images/adsk-wiki-logo.png' as ImageURL, '' as Duration, '' as Language, 'autodeskwiki' as Provider, 
                 '' as CEU, '' as Format, '' as DurationUnits, '' as \"Publish Date\", 
                 \"confluencetodegreed\".wiki_spaces.owners as Owners, 
                 \"confluencetodegreed\".wiki_spaces.topic1 as Topic1, 
@@ -121,9 +121,9 @@ def lambda_handler(event, context):
       for hdr in tblhdrs_meta:
         fieldnames.append(hdr['VarCharValue'])
       if "dry_run" in config:
-        filename = "STEP_FUNCTION_TESTING_File_%s.csv" % date.today().isoformat().replace('-','')
+        filename = "STEP_FUNCTION_TESTING_File_%s_wiki.csv" % date.today().isoformat().replace('-','')
       else:
-        filename = "Content_File_%s.csv" % date.today().isoformat().replace('-','')
+        filename = "Content_File_%s_wiki.csv" % date.today().isoformat().replace('-','')
 
       # generate the CSV file
       with open("/tmp/%s" % filename, 'w') as fp:
