@@ -54,7 +54,7 @@ def lambda_handler(event, context):
                 \"confluencetodegreed\".wiki_spaces.contentid as ContentId, 
                 \"confluencetodegreed\".wiki_spaces.url as URL, 'N' as \"Delete\", 
                 \"confluencetodegreed\".wiki_spaces.title as Title, '' as Summary, 
-                'https://dpe-support.autodesk.com/images/adsk-wiki-logo.png' as ImageURL, '' as Duration, '' as Language, '' as Provider, 
+                'https://dpe-support.autodesk.com/images/adsk-wiki-logo.png' as ImageURL, '' as Duration, '' as Language, 'autodeskwiki' as Provider, 
                 '' as CEU, '' as Format, '' as DurationUnits, '' as \"Publish Date\", 
                 \"confluencetodegreed\".wiki_spaces.owners as Owners, 
                 \"confluencetodegreed\".wiki_spaces.topic1 as Topic1, 
